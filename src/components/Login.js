@@ -16,10 +16,10 @@ function Login() {
   return (
     <div>
         <button onClick={handleLogin}>
-                Login
+          Login
         </button>
         <button onClick={handleLogout}>
-                Logout
+          Logout
         </button>
     </div>
   )

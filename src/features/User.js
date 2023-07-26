@@ -4,13 +4,20 @@ const initialState = { name: '', age: 0, email: ''};
 
 export const userSlice = createSlice({
     name: 'user',
-    initialState: { value: initialState},
+    initialState,
     reducers: {
         login: (state, action) => {
-            state.value = action.payload;
+            // state = action.payload;
+            const {name, age, email} = action.payload ?? {};
+            return {
+                ...state,
+                name,
+                age,
+                email
+            }
         },
         logout: (state) => {
-            state.value = initialState;
+            return initialState;
         }
     },
 })
