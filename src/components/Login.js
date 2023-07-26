@@ -4,16 +4,21 @@ import { login, logout } from '../features/User';
 
 function Login() {
     const dispatch = useDispatch();
+
+    const handleLogin =() => {
+      dispatch(login({ name: 'N', age: 20, email: 'N@gmail.com'}));
+      }
+
+    const handleLogout = () => {
+      dispatch(logout());
+      }
+
   return (
     <div>
-        <button onClick={() => {
-            dispatch(login({ name: 'N', age: 20, email: 'N@gmail.com'}));
-            }}>
+        <button onClick={handleLogin}>
                 Login
         </button>
-        <button onClick={() => {
-            dispatch(logout());
-            }}>
+        <button onClick={handleLogout}>
                 Logout
         </button>
     </div>
